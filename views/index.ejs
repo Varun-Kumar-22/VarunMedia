@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Social App</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    </header>
+    <main>
+     <section id="feed"> 
+     <%for(let user of users){%>
+          <div class="post-card">
+        <div class="post-header">
+            <img src="<%=user.picture.large%>" alt="User Profile" class="Profile-pic" width="50">
+            <span class="username"><%=user.name.first%> <%=user.name.last%></span>
+        </div>
+        <img src="<%=user.picture.large%>" alt="Post-image" class="Post-image" width="300">
+
+        <div class="Post-action">
+            ❤️ 12 Likes | 💬 3 Comments
+        </div>
+
+        <div class="Post-caption">
+            <strong><%=user.name.first%></strong> This is my first post in my social media app.
+        </div>
+     </div>
+     <%}%>
+    </section>
+    </main>
+</body>
+</html>
